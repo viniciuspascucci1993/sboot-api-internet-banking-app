@@ -34,7 +34,7 @@ public class AccountBankingExtract implements Serializable {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "bank_account_detailing_id")
+    @JoinColumn(name = "banking_account_id")
     private BankAccountDetailing bankAccountDetailing;
 
     @Column(name = "pendency_amount")

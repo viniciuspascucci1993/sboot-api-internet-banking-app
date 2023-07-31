@@ -3,11 +3,9 @@ package com.vinicius.sbootapiinternetbankingapp.util;
 import com.vinicius.sbootapiinternetbankingapp.dto.AccountBankingExtractDTO;
 import com.vinicius.sbootapiinternetbankingapp.dto.BankCardDataDTO;
 import com.vinicius.sbootapiinternetbankingapp.dto.ContactDataDTO;
-import com.vinicius.sbootapiinternetbankingapp.dto.TransactionHistoryDTO;
 import com.vinicius.sbootapiinternetbankingapp.entities.AccountBankingExtract;
 import com.vinicius.sbootapiinternetbankingapp.entities.BankCardData;
 import com.vinicius.sbootapiinternetbankingapp.entities.ContactData;
-import com.vinicius.sbootapiinternetbankingapp.entities.TransactionHistory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +34,7 @@ public class ConvertUtil {
                 contactData.getEmail());
     }
 
-    public static List<AccountBankingExtractDTO> convertAccountBankingToDtoList(List<AccountBankingExtract>
+    public static List<AccountBankingExtractDTO> convertAccountBankingExtractToDtoList(List<AccountBankingExtract>
                                           accountBankingExtracts) {
         List<AccountBankingExtractDTO> accountBankingExtractDTOArrayList = new ArrayList<>();
 

@@ -10,9 +10,9 @@ public interface BankAccountDetailingRepository extends JpaRepository<BankAccoun
 
     @Query("SELECT bd " +
             "FROM BankAccountDetailing bd " +
-            "LEFT JOIN FETCH bd.contactData " +
-            "LEFT JOIN FETCH bd.transactionHistory " +
-            "LEFT JOIN FETCH bd.bankCardDataList " +
+            "LEFT JOIN bd.contactData " +
+            "LEFT JOIN bd.accountBankingExtracts " +
+            "LEFT JOIN bd.bankCardDataList " +
             "WHERE bd.id = :id")
     BankAccountDetailingDTO getBankAccountDetailingDTOById(@Param("id") Long id);
 

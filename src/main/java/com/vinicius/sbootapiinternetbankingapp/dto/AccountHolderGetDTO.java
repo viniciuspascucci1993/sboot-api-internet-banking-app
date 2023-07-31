@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,7 +19,6 @@ public class AccountHolderGetDTO {
     private LocalDate birthDate;
     private String accountHolderSince;
     private BigDecimal balance;
-    private List<BankDetailDTO> bankDatas;
 
     public AccountHolderGetDTO(AccountHolder entity) {
         this.id = entity.getId();

@@ -27,6 +27,6 @@ public class BankCardData {
     private BigDecimal limitCreditCard;
 
     @ManyToOne
-    @JoinColumn(name = "bank_detailing_account_id")
+    @JoinColumn(name = "banking_account_id")
     private BankAccountDetailing bankDetailingAccount;
 }

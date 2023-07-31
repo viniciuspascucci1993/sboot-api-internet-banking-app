@@ -35,7 +35,4 @@ public class AccountHolder {
     private String accountHolderSince;
     private BigDecimal balance;
 
-    @OneToMany(mappedBy = "accountHolder")
-    private List<BankDetail> bankDatas;
-
 }

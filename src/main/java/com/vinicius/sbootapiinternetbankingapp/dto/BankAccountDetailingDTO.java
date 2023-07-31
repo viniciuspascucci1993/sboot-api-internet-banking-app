@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Set;
 
 import static com.vinicius.sbootapiinternetbankingapp.util.ConvertUtil.*;
 
@@ -33,7 +34,7 @@ public class BankAccountDetailingDTO {
         this.numberBankAccount = entity.getNumberBankAccount();
         this.cpfOrCnpjAccountHolder = entity.getCpfOrCnpjAccountHolder();
         this.contactData = convertContactDataToDto(entity.getContactData());
-        this.accountBankingExtracts = convertAccountBankingToDtoList(entity.getAccountBankingExtracts());
+        this.accountBankingExtracts = convertAccountBankingExtractToDtoList(entity.getAccountBankingExtracts());
         this.balanceAccount = entity.getBalanceAccount();
         this.bankCardDataList = convertBankCardDataToDtoList(entity.getBankCardDataList());
 
