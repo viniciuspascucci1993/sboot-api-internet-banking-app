@@ -21,18 +21,27 @@ public class AccountHolder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String email;
 
-    @Column(name = "cpf_cnpj")
-    private Long cpfOrCnpj;
+    private String name;
+
+    @Column(name = "mother_name")
+    private String motherName;
+
+    @Column(name = "father_name")
+    private String fatherName;
 
     @Column(name = "birth_date")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
 
-    @Column(name = "account_holder_since")
-    private String accountHolderSince;
+    @Column(name = "customer_since")
+    private String customerSince;
     private BigDecimal balance;
+
+    @Column(name = "job_code")
+    private Integer jobCode;
+
+    @Column(name = "job_title")
+    private String jobTitle;
 
 }
