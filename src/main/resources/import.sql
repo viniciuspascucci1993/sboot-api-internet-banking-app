@@ -13,6 +13,9 @@ INSERT INTO tb_banking_account(full_name_account_holder, number_bank, number_ban
 -- Inserir dados na tabela Bank Detailing Account
 INSERT INTO tb_bank_card(name, flag_credit_card, type_credit_card, limit_credit_card, banking_account_id) VALUES('ItauCard MAESTRO Final 7590', 'MASTERCARD', 'Multiplo Debito/Credito', 20900.0, 1)
 
+-- Inserir dados na tabela Balance Account Holder
+INSERT INTO tb_balance_account_holder (name_account_holder, current_balance, updated_balance, description) VALUES ('Vinicius Torres Pascucci', 12600.00, null, null);
+
 -- Inserir dados na tabela Banking Extract
 INSERT INTO tb_banking_extract (currrent_date, balance_current_date, category_name, description, banking_account_id, pendency_amount) VALUES ('2023-07-26', 1250.0, 'Miscellaneous Expenses', 'rshop-convenienci-26/07', 1, 16.55)
 
