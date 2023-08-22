@@ -5,10 +5,7 @@ import com.vinicius.sbootapiinternetbankingapp.service.AccountHolderService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
@@ -19,6 +16,14 @@ public class AccountHolderController {
 
     @Autowired
     private AccountHolderService accountHolderService;
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<AccountHolderDTO> findById(@PathVariable("id") Long id ) {
+
+        AccountHolderDTO dto = accountHolderService.findById( id );
+        return ResponseEntity.ok().body(dto);
+
+    }
 
     @PostMapping
     public ResponseEntity<AccountHolderDTO> insert(@Valid @RequestBody AccountHolderDTO accountHolderDTO) {

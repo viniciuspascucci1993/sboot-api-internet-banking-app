@@ -4,10 +4,9 @@ import com.vinicius.sbootapiinternetbankingapp.entities.transactions.PixTransact
 import com.vinicius.sbootapiinternetbankingapp.service.transactions.CallerSmsPixNotificationServuce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/api/v1/internet-banking/pix")
@@ -16,9 +15,10 @@ public class PixTransactionController {
     @Autowired
     private CallerSmsPixNotificationServuce callerSmsPixNotificationServuce;
 
-    @PostMapping("/transfer")
-    public ResponseEntity<String> transfer(@RequestBody PixTransaction pixTransaction) {
-        callerSmsPixNotificationServuce.sendSms(pixTransaction.getId());
+    @PostMapping("/transfer/{valueTransfer}")
+    public ResponseEntity<String> transfer(@RequestBody PixTransaction pixTransaction,
+                    @PathVariable("valueTransfer") BigDecimal valueTransfer) {
+        callerSmsPixNotificationServuce.sendSms(pixTransaction.getId(), valueTransfer);
         return ResponseEntity.ok("Transferência Pix Realizada com sucesso");
     }
 }

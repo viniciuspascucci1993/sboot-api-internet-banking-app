@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.twilio.type.PhoneNumber;
 
+import java.math.BigDecimal;
+
 @Service
 @Slf4j
 public class CallerSmsPixNotificationServuce {
@@ -29,7 +31,7 @@ public class CallerSmsPixNotificationServuce {
     @Autowired
     private PixTransactionRepository pixTransactionRepository;
 
-    public void sendSms(Long pixId) {
+    public void sendSms(Long pixId, BigDecimal valueTransfer) {
 
         PixTransaction pixTransaction = pixTransactionRepository.findById(pixId).get();
 
@@ -37,7 +39,7 @@ public class CallerSmsPixNotificationServuce {
                                                 + "/" + pixTransaction.getDate().getYear();
         String messageVendor = "Você recebeu uma transferência via PIX de:  "
                 + pixTransaction.getSenderAccount() + " realizado na data de:  " + date
-                    + " no valor de: R$ " + String.format("%.2f", pixTransaction.getAmount());
+                    + " no valor de: R$ " + String.format("%.2f", valueTransfer);
         Twilio.init(twilioSid, twilioKey);
 
         PhoneNumber to = new PhoneNumber(twilioPhoneTo);

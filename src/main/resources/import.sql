@@ -1,5 +1,5 @@
 -- Inserir dados na tabela Pix Transaction
-INSERT INTO tb_pix (sender_account, receiver_account, date, amount) VALUES ('+17626677668', '42155435843', '2023-08-11' , 1500.0);
+INSERT INTO tb_pix (sender_account, receiver_account, date) VALUES ('+17626677668', '42155435843', CURRENT_DATE);
 
 -- Inserir dados na tabela State
 INSERT INTO tb_state (name, country) VALUES ('São Paulo', 'São Paulo');

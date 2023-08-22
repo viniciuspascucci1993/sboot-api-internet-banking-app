@@ -28,5 +28,4 @@ public class PixTransaction {
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
-    private BigDecimal amount;
 }
